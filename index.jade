@@ -9,11 +9,11 @@ html
 			div.enter__wrapper
 				div.enter__window
 					p.error Логин или пароль указаны неверно. Попробуйте еще раз.
-					form(action='#' method='get').enter__form
+					form(action='#' method='get' onsubmit='return validation()').enter__form
 						div.enter__logo
 							img(src='img/logo.png' alt='logo')
-						input(type='text' name='enter__login' placeholder='Логин').enter__login.enter__input-text
-						input(type='password' name='enter__password' placeholder='Пароль').enter__password.enter__input-text
+						input(type='text' name='enter__login' id='enter__login' placeholder='Логин').enter__login.enter__input-text
+						input(type='password' name='enter__password' id='enter__password' placeholder='Пароль').enter__password.enter__input-text
 						input(type='checkbox' name='enter__remember' id='enter__remember').enter__remember
 						label(for='enter__remember').enter__checkbox-label Запомнить меня
 						a(href='#').enter__recover Восстановить пароль

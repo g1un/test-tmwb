@@ -13,7 +13,7 @@ gulp.task('sass', function(){
 		outputStyle: 'expanded'
 	}))
 	.pipe(autoprefixer())
-	.pipe(replace('sprite.png', 'images/sprite.png'))
+	.pipe(replace('sprite.png', '../img/sprite.png'))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({
 		stream: true
@@ -32,13 +32,13 @@ gulp.task('jade', function(){
 });
 
 gulp.task('sprite', function () {
-	var spriteData = gulp.src('app/images/sprite/*.png').pipe(spritesmith({
+	var spriteData = gulp.src('app/img/sprite/*.png').pipe(spritesmith({
 		imgName: 'sprite.png',
 		cssName: 'sprite.scss'
 	}));
 
 	var imgStream = spriteData.img
-			.pipe(gulp.dest('app/images/'));
+			.pipe(gulp.dest('app/img/'));
 
 	var cssStream = spriteData.css
 			.pipe(gulp.dest('scss/components'));
@@ -49,7 +49,7 @@ gulp.task('sprite', function () {
 gulp.task('watch', ['browserSync', 'sass', 'jade', 'sprite'], function(){
 	gulp.watch('**/*.scss', ['sass']);
 	gulp.watch('*.jade', ['jade']);
-	gulp.watch('app/images/sprite/*.png', ['sprite']);
+	gulp.watch('app/img/sprite/*.png', ['sprite']);
 	gulp.watch('app/*.html', browserSync.reload);
 	gulp.watch('app/js/**/*.js', browserSync.reload);
 });

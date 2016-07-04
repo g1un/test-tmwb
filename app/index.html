@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>«timeweb»</title>
+    <title>«Timeweb»</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
@@ -10,10 +10,10 @@
       <div class="enter__wrapper">
         <div class="enter__window">
           <p class="error">Логин или пароль указаны неверно. Попробуйте еще раз.</p>
-          <form action="#" method="get" class="enter__form">
+          <form action="#" method="get" onsubmit="return validation()" class="enter__form">
             <div class="enter__logo"><img src="img/logo.png" alt="logo"></div>
-            <input type="text" name="enter__login" placeholder="Логин" class="enter__login enter__input-text">
-            <input type="password" name="enter__password" placeholder="Пароль" class="enter__password enter__input-text">
+            <input type="text" name="enter__login" id="enter__login" placeholder="Логин" class="enter__login enter__input-text">
+            <input type="password" name="enter__password" id="enter__password" placeholder="Пароль" class="enter__password enter__input-text">
             <input type="checkbox" name="enter__remember" id="enter__remember" class="enter__remember">
             <label for="enter__remember" class="enter__checkbox-label">Запомнить меня</label><a href="#" class="enter__recover">Восстановить пароль</a>
             <input type="submit" name="enter__submit" value="Войти" class="enter__submit">
